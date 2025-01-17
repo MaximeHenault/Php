@@ -8,6 +8,7 @@
     <li>Chandelle</li>
     <li>Corde</li>
     <li>Clé anglaise</li>
+    <li>Barre de fer</li>
     </ul>";
     echo "<h3>Les personnages :</h3>";
     echo "<ul>
