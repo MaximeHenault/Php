@@ -26,6 +26,8 @@
     <li>Bibliothèque</li>
     <li>Véranda</li>
     <li>Cuisine</li>
+    <li>Salle de billard</li>
+    <li>Bureau</li>
     </ul>";
 
 ?>
