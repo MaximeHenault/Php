@@ -1,10 +1,11 @@
 <?php
-
     include('appmvc.php');
-    $mavar = new Maclasse();
-    echo $mavar -> Getmonattribut();
-    $mavar -> Setmonattribut(5);
-    echo "Oui";
-    echo $mavar -> Getmonattribut();
+
+    if(isset($_GET['page'])) $page = $_GET['page'];
+    else $page = 1;
+
+    $appMVC = new AppMVC();
+
+    $appMVC -> afficherPage($page);
 
 ?>
