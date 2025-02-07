@@ -7,5 +7,4 @@
     $appMVC = new AppMVC();
 
     $appMVC -> afficherPage($page);
-
 ?>
