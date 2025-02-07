@@ -1,29 +1,39 @@
 <?php
 
-    class BDD {
+class Database {
+    private $host = '192.168.56.40';
+    private $username = 'operateur';
+    private $password = 'operateur';
+    private $dbname = 'Quizz';
+    private $connection;
 
-        private $mysqli;
-
-        public function __constructeur(){
-            $this -> mysqli = false;
-        }
-
-        public function connexion(){
-            $this -> mysqli = new mysqli('172.16.10.40','sio1-tp2','Sio1TP2.56','rpgquest');
-
-            if($this -> mysqli == false) return false;
-            else return true;
-        }
-
-        public function deconnexion(){
-            if($this -> mysqli != false){
-                $this -> mysqli -> close();
-            }
-        }
-
-        public function requete(){
-
-        }
-
+    public function __construct() {
+        $this->connect();
     }
+
+    private function connect() {
+        try{
+            $this->connection = new mysqli($this->host, $this->username, $this->password, $this->dbname);
+        }catch (Exception $e){
+            die("Erreur de connexion : " . $e->getMessage());
+        }
+    }
+
+    public function getConnection() {
+        return $this->connection;
+    }
+
+    public function closeConnection() {
+        if ($this->connection) {
+            $this->connection->close();
+        }
+    }
+
+    public function requete(){
+        $req = ("select * from quizz;");
+        $result = $this->connection->query($req); // Exécution de la requête
+        return $result -> fetch_all(MYSQLI_ASSOC);
+    }    
+}
 ?>
+ 
