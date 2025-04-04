@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <p>Bienvenue sur le Quizz</p>
+        <h1>Bienvenue sur le Quizz</h1>
     </header>
     <nav>
         <?php
